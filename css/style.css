@@ -9,15 +9,13 @@ body {
     height: 70vh;
     object-fit: cover;
 }
-.navbar a {
+nav a {
     text-decoration: none;
-    padding: 10px;  
     color: #ffffff;  
     transition: all 0.2s ease-in-out;
 }
-.navbar a:hover {
+nav a:hover {
     color: #c59c33;
-    padding: 10px; 
     transform: scale(1);
 }
 .profile-section {
@@ -34,27 +32,33 @@ body {
 }
 .main-content {
     padding: 20px;
+}
+.summary{
     text-align: justify;
 }
 .sidebar {
     padding: 10px;
 }
-.nav-link:hover {
+nav a:hover {
     color: #e9cb45 !important;
     text-decoration: none;
 }
-.nav-link.active {
+nav .active {
     color: #e9cb45 !important;
     font-weight: bold;
     border-bottom: 2px solid #e9cb45;
     transition: 0.3s;
 }
 .card-hover {
+    height: 100%;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     position: relative;
 }
-
-.card-hover:hover {
+.card{
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+}
+.card-hover:hover, .card:hover {
     transform: scale(1.01);
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
 }
@@ -62,8 +66,14 @@ body {
 .hover-icon {
     opacity: 0;
     transition: opacity 0.3s ease;
+    position: absolute;
+    top: 20%;
+    left: 90%;
+    transform: translate(-50%, -50%);
 }
-
-.card-hover:hover .hover-icon {
+.card-title{
+    font-weight: bold;
+}
+.card-hover:hover .hover-icon , .card:hover .hover-icon {
     opacity: 1;
 }
