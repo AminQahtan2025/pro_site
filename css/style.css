@@ -1,0 +1,69 @@
+body {
+    font-family: cairo, sans-serif;
+}
+.banner {
+    position: relative;
+}
+.banner img {
+    width: 100%;
+    height: 70vh;
+    object-fit: cover;
+}
+.navbar a {
+    text-decoration: none;
+    padding: 10px;  
+    color: #ffffff;  
+    transition: all 0.2s ease-in-out;
+}
+.navbar a:hover {
+    color: #c59c33;
+    padding: 10px; 
+    transform: scale(1);
+}
+.profile-section {
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+.profile-section img {
+    max-width: 100%;
+    border-radius: 10px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+.main-content {
+    padding: 20px;
+    text-align: justify;
+}
+.sidebar {
+    padding: 10px;
+}
+.nav-link:hover {
+    color: #e9cb45 !important;
+    text-decoration: none;
+}
+.nav-link.active {
+    color: #e9cb45 !important;
+    font-weight: bold;
+    border-bottom: 2px solid #e9cb45;
+    transition: 0.3s;
+}
+.card-hover {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+}
+
+.card-hover:hover {
+    transform: scale(1.01);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.hover-icon {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.card-hover:hover .hover-icon {
+    opacity: 1;
+}
