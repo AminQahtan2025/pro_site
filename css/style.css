@@ -14,10 +14,6 @@ nav a {
     color: #ffffff;  
     transition: all 0.2s ease-in-out;
 }
-nav a:hover {
-    color: #c59c33;
-    transform: scale(1);
-}
 .profile-section {
     border-radius: 10px;
     padding: 20px;
@@ -40,13 +36,13 @@ nav a:hover {
     padding: 10px;
 }
 nav a:hover {
-    color: #e9cb45 !important;
+    color: #a0a7e5 !important;
     text-decoration: none;
 }
 nav .active {
-    color: #e9cb45 !important;
+    color: #ffffff !important;
     font-weight: bold;
-    border-bottom: 2px solid #e9cb45;
+    border-bottom: 2px solid #ffffff;
     transition: 0.3s;
 }
 .card-hover {
@@ -76,4 +72,10 @@ nav .active {
 }
 .card-hover:hover .hover-icon , .card:hover .hover-icon {
     opacity: 1;
+}
+.footer{
+    background-color: #002079;
+    color: #ffffff;
+    padding: 20px;
+    text-align: center;
 }
