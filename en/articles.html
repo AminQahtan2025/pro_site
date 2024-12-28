@@ -10,6 +10,11 @@
     <!-- Google Fonts - Cairo -->
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .card{
+            height: 200px;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
@@ -17,15 +22,22 @@
         <div class="banner">
             <img src="../images/banner.jpeg" alt="General Articles Banner" class="img-fluid w-100 shadow-sm">
         </div>
+                <!-- Breadcrumb -->
+                <div aria-label="breadcrumb" class="shadow">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="../index.html" class="text-decoration-none">Home</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">General Articles</li>
+                    </ol>
+                </div>
         <div class="container border">
             <h1 class="text-center m-4">General Articles</h1>
             <div class="row g-3">
                 <div class="col-md-6">
                     <a href="../articles/article-viewer.html?id=1" class="text-decoration-none card-link" style="color: black;">
-                        <div class="card mb-3 shadow-sm">
+                        <div class="card mb-3 shadow-sm h-wrap">
                         <div class="row g-0 align-items-center">
                             <div class="col-2 text-center p-3">
-                                <i class="fa fa-lightbulb-o fa-3x" style="color: #002079;"></i>
+                                <i class="fa fa-lightbulb-o fa-3x text-warning" ></i>
                             </div>
                             <div class="col-10 position-relative">
                                 <div class="card-body">
@@ -46,7 +58,7 @@
                         <div class="card mb-3 shadow-sm">
                         <div class="row g-0 align-items-center">
                             <div class="col-2 text-center p-3">
-                                <i class="fa fa-cogs fa-3x" style="color: #002079;"></i>
+                                <i class="fa fa-cogs fa-3x text-secondary"></i>
                             </div>
                             <div class="col-10 position-relative">
                                 <div class="card-body">
@@ -67,7 +79,7 @@
                         <div class="card mb-3 shadow-sm">
                         <div class="row g-0 align-items-center">
                             <div class="col-2 text-center p-3">
-                                <i class="fa fa-star fa-3x" style="color: #002079;"></i>
+                                <i class="fa fa-star fa-3x text-danger"></i>
                             </div>
                             <div class="col-10 position-relative">
                                 <div class="card-body">
@@ -88,7 +100,7 @@
                         <div class="card mb-3 shadow-sm">
                         <div class="row g-0 align-items-center">
                             <div class="col-2 text-center p-3">
-                                <i class="fa fa-rocket fa-3x" style="color: #002079;"></i>
+                                <i class="fa fa-rocket fa-3x text-danger"></i>
                             </div>
                             <div class="col-10 position-relative">
                                 <div class="card-body">
@@ -106,63 +118,41 @@
             </div>
         </div>
     </div>
-    <footer class="footer text-white py-3 shadow">
-        <div class="container">
-            <div class="row align-items-center mb-3">
-                <div class="col-md-4 text-center text-md-start">
-                    <a href="../index.html" class="navbar-brand text-white fw-bold">Dr. Abdullah
-                        Al-Swidi</a>
-                    <p class="small mt-1">Welcome to My Official Website</p>
-                </div>
-                <div class="col-md-8 text-center">
-                    <nav class="d-flex justify-content-center align-items-center flex-wrap">
-                        <a href="../index.html" class="text-white text-decoration-none me-3 ">
-                            <i class="fa fa-user-circle me-1"></i>Profile
-                        </a>
-                        <a href="https://scholar.google.com/citations?user=8C1TsbQAAAAJ&hl=en"
-                            class="text-white text-decoration-none me-3">
-                            <i class="fa fa-book me-1"></i>Articles
-                        </a>
-                        <a href="../en/networks.html" class="text-white text-decoration-none me-3">
-                            <i class="fa fa-users me-1"></i>Networks
-                        </a>
-                        <a href="en/training.html" class="text-white text-decoration-none me-3">
-                            <i class="fa fa-graduation-cap me-1"></i>Programs
-                        </a>
-                        <a href="en/consultancy.html" class="text-white text-decoration-none me-3">
-                            <i class="fa fa-briefcase me-1"></i>Consultancy
-                        </a>
-                        <a href="en/materials.html" class="text-white text-decoration-none me-3">
-                            <i class="fa fa-file-text me-1"></i>Materials
-                        </a>
-                        <a href="en/articles.html" class="text-white text-decoration-none active">
-                            <i class="fa fa-newspaper-o me-1"></i>Articles
-                        </a>
-                    </nav>
-                </div>
+<!-- Footer -->
+<footer class="footer shadow mt-3 w-100">
+    <div class="container">
+        <div class="row ">
+            <div class="col-md-4 ">
+                <a href="../index.html" class="navbar-brand text-white fw-bold">Dr. Abdullah Al-Swidi</a>
             </div>
-            <hr class="bg-light">
-            <div class="row align-items-center">
-                <div class="col-md-6 text-center text-md-start mb-2 mb-md-0">
-                    <div class="dropdown">
-                        <button class="btn btn-outline-light dropdown-toggle btn-sm" type="button"
-                            data-bs-toggle="dropdown" aria-expanded="false">
-                            <i class="fa fa-language me-2"></i>Language
-                        </button>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="../ar/profile.html">العربية</a></li>
-                            <li><a class="dropdown-item" href="#">English</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-md-6 text-center text-md-end">
-                    <p class="mb-0 small">&copy; 2024 <a href="../index.html"
-                            class="text-white text-decoration-none">Dr. Abdullah Al-Swidi</a>. All rights
-                        reserved.</p>
+            <div class="col-md-4 text-center mt-2">
+                <p class="small mt-2">Click the button to measure and evaluate your leadership capabilities.</p>
+                <a href="Assessment.html"><button class="btn btn-outline-light">
+                    Leadership Efficiency Scale
+                </button></a>
+            </div>
+            <div class="col-md-4 mt-2">
+                <div class="dropdown">
+                    <button class="btn btn-outline-light dropdown-toggle btn-sm " type="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="fa fa-language me-2"></i>Language
+                    </button>
+                    <ul class="dropdown-menu ">
+                        <li><a class="dropdown-item" href="ar/profile.html">العربية</a></li>
+                        <li><a class="dropdown-item" href="#">English</a></li>
+                    </ul>
                 </div>
             </div>
         </div>
-    </footer>
+        <hr class="bg-light">
+        <div class="text-center">
+            <p class="mb-0 small">&copy; 2024 <a href="../index.html"
+                    class="text-white text-decoration-none">Dr. Abdullah Al-Swidi</a>. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+</div>
+
     <script
         src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
