@@ -73,9 +73,12 @@ nav .active {
 .card-hover:hover .hover-icon , .card:hover .hover-icon {
     opacity: 1;
 }
-.footer{
+.footer,header{
     background-color: #002079;
     color: #ffffff;
     padding: 20px;
     text-align: center;
+}
+.breadcrumb{
+    padding: 20px;
 }
