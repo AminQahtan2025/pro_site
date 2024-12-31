@@ -67,18 +67,50 @@ nav .active {
     left: 90%;
     transform: translate(-50%, -50%);
 }
-.card-title{
-    font-weight: bold;
-}
 .card-hover:hover .hover-icon , .card:hover .hover-icon {
     opacity: 1;
 }
-.footer,header{
+.footer{
     background-color: #002079;
     color: #ffffff;
     padding: 20px;
     text-align: center;
 }
+.header{
+    background-color: #002079;
+    color: #ffffff;
+    padding: 10px;
+}
+.logo-text {
+    font-weight: bold;
+}
 .breadcrumb{
     padding: 20px;
+}
+.category-section {
+    display: none;
+}
+
+#progressBar {
+    height: 30px;
+}
+
+.invalid-feedback {
+    display: none;
+}
+
+.form-check-input:invalid ~ .invalid-feedback {
+    display: block;
+}
+.is-invalid {
+    border: 1px solid red;
+}
+
+.invalid-feedback {
+    color: red;
+    display: none;
+}
+
+.is-invalid + .invalid-feedback {
+    display: block;
 }
