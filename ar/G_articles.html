@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>المقالات العامة</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.css" rel="stylesheet">
+    <!-- Google Fonts - Cairo -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        body {
+            font-family: 'Cairo', sans-serif;
+        }
+        .card {
+            height: 200px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- صورة البانر -->
+        <div class="banner">
+            <img src="../images/banner.jpeg" alt="بانر المقالات العامة" class="img-fluid w-100 shadow-sm">
+        </div>
+        <div class="header logo d-flex flex-row">
+            <!-- مسار التنقل -->
+            <div aria-label="breadcrumb" class="shadow">
+                <ol class="breadcrumb m-0">
+                    <li class="breadcrumb-item link"><a href="../index.html" class="text-decoration-none">الرئيسية </a>/ </li>
+                    <li class="breadcrumb-item active" aria-current="page">المقالات العامة</li>
+                </ol>
+            </div>
+        </div>
+        <div class="container border">
+            <h1 class="text-center m-4">المقالات العامة</h1>
+            <div class="row g-3">
+                <!-- أول مقال -->
+                <div class="col-md-6">
+                    <a href="../articles/article-viewer.html?id=1" class="text-decoration-none card-link" style="color: black;">
+                        <div class="card mb-3 shadow-sm">
+                            <div class="row g-0 align-items-center">
+                                <div class="col-2 text-center p-3">
+                                    <i class="fa fa-lightbulb-o fa-3x text-warning"></i>
+                                </div>
+                                <div class="col-10 position-relative">
+                                    <div class="card-body">
+                                        <h5 class="card-title">المهارات الأساسية للخريجين للنجاح في سوق العمل المستقبلي</h5>
+                                        <p class="card-text">تعرف على المهارات الأساسية المطلوبة للنجاح في سوق العمل الحديث.</p>
+                                        <p class="card-text"><small class="text-body-secondary">تاريخ النشر: ديسمبر 2024</small></p>
+                                    </div>
+                                    <div class="hover-icon position-absolute start-0 top-50 translate-middle-y ps-3">
+                                        <i class="fa fa-arrow-left fa-lg" style="color: #002079;"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <!-- مقالات أخرى -->
+                <!-- كرر نفس الهيكل مع تغييرات في النصوص للمقالات الأخرى -->
+            </div>
+        </div>
+        <!-- الفوتر -->
+        <footer class="footer shadow mt-3 w-100">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="logo text-center">
+                            <h5><a href="../index.html" class="navbar-brand text-white fw-bold">د. عبدالله السويّدي</a></h5>
+                            <p style="font-size: 15px; margin-top: 10px;">التميز والابتكار في الاستدامة</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 text-center mt-2">
+                        <p id="visitor-counter" class="text-white fw-bold" style="font-size: 14px;">
+                            الزوار: <br>
+                            <span id="visitor-count" class="animated-counter">0</span>
+                        </p>
+                    </div>
+                    <div class="col-md-4 mt-2">
+                        <div class="dropdown">
+                            <button class="btn btn-outline-light dropdown-toggle btn-sm" type="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="fa fa-language me-2"></i>اللغة
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">العربية</a></li>
+                                <li><a class="dropdown-item" href="../en/G_articles.html">English</a></li>
+                            </ul>
+                        </div>
+                        <div id="google_translate_element"></div>
+
+                    </div>
+
+                </div>
+                <hr class="bg-light">
+                <div class="text-center">
+                    <p class="mb-0 small">&copy; 2024 <a href="../index.html" class="text-white text-decoration-none">د. عبدالله السويّدي</a>. جميع الحقوق محفوظة.</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="../js/counter.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
