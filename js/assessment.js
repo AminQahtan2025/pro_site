@@ -3,9 +3,9 @@ const categories = [
     { name: "قدرات القيادة الذاتية", questions: 5, threshold: 15 },
     { name: "قيادة فرق العمل", questions: 6, threshold: 18 },
     { name: "القيادة التنظيمية", questions: 6, threshold: 18 },
-    { name: "القيادة التكنولوجية", questions: 4, threshold: 12 },
+    { name: "القيادة التكنولوجية", questions: 6, threshold: 18 },
     { name: "القيادة الإبداعية والريادية", questions: 5, threshold: 15 },
-    { name: "القيادة الفنية", questions: 4, threshold: 12 }
+    { name: "القيادة الفنية", questions: 5, threshold: 15 },
 ];
 
 const questionnaire = [
@@ -42,7 +42,9 @@ const questionnaire = [
 // Category 5: القيادة التكنولوجية
 "لدي شغف كبير بكل جديد في عالم التكنولوجيا وكيفية الاستفادة منه على المستوى الشخصي والعملي.",
 "لدي الخبرة والكفاءة للتعامل مع الاتجاهات والتحولات الجديدة في عالم التكنولوجيا مثل الذكاء الاصطناعي وأنظمة الأتمتة والبيانات الضخمة وإنترنت الأشياء.",
+"لدي الخبرة والقدرة على التعامل مع تطبيقات الذكاء الاصطناعي لتنفيذ الاعمال وتعزيز الانتاجية.",
 "أمتلك المعرفة العلمية والقدرات التي تمكنني من تحليل الأعمال واتخاذ قرارات موجهة بالبيانات والحقائق.",
+"أمتلك الثقافة الرقمية وحب الاطلاع على كل ما هو جديد في عالم التكنولوجيا والتطبيقات.",
 "أمتلك الثقافة الرقمية ولدي انفتاح لتقبل الجديد في عالم التكنولوجيا وتجربته وقياس فوائده على المستوى الشخصي والتنظيمي.",
 
 // Category 6: القيادة الإبداعية والريادية
@@ -56,7 +58,8 @@ const questionnaire = [
 "أمتلك المعرفة العلمية والكفاءة المهنية والقدرات الوظيفية في مجال تخصصي.",
 "أمتلك الشغف والرغبة الدائمة على الاطلاع على كل جديد في مجال تخصصي وأشعر بالمتعة في ذلك.",
 "لدي الرغبة الدائمة في التميز المعرفي وفي مجال القدرات والمهارات في مجال تخصصي وأحب دائماً أن أكون المرجع في ذلك.",
-"لدي المعرفة والقدرة على التعامل الفني مع الآخرين وتقديم الدعم والمشورة والتوجيه اللازم للعاملين في مجال تخصصي."
+"لدي المعرفة والقدرة على التعامل الفني مع الآخرين وتقديم الدعم والمشورة والتوجيه اللازم للعاملين في مجال تخصصي.",
+"لدي القدرة على الاشراف الفني على الأفراد وتقديم التوجيه اللازم لضمان تحقيق الأهداف التنظيمية."
 ];
 const questionsContainer = document.getElementById("questionsContainer");
 const progressBar = document.getElementById("progressBar");
@@ -83,7 +86,7 @@ function renderCategory(index) {
             <div class="mb-3">
                 <label class="form-label">${questionnaire.shift()}</label>
                 <select class="form-select" name="${questionId}" required>
-                    <option value="" selected>اختر الإجابة...</option>
+                    <option  value="" selected>اختر الإجابة...</option>
                     <option value="5">إلى حد كبير</option>
                     <option value="4">إلى حد ما</option>
                     <option value="3">متعادل</option>
@@ -96,7 +99,7 @@ function renderCategory(index) {
     }
 
     questionsContainer.appendChild(categorySection);
-}
+}   
 
 function calculateCategoryScore() {
     const categoryFormData = new FormData(document.getElementById("questionnaireForm"));
@@ -154,6 +157,7 @@ function showResults() {
 
     let result = `
     <h4 class="mt-4">الجاهزية القيادية</h4>
+    <div class="table-responsive">
         <table class="table table-bordered">
             <thead class="table-light">
                 <tr>
@@ -165,6 +169,68 @@ function showResults() {
             </thead>
             <tbody>
     `;
+    // Array of detailed development messages for each category
+    const developmentMessages = [
+        `تحتاج ان تركز على تطوير الكفاءات العامة في القيادة:
+         <ul>
+            <li>قدرات التفكير الاستراتيجي</li>
+            <li>قدرات وضع الأهداف</li>
+            <li>قدرات إدارة الوقت</li>
+            <li>قدرات التأثير والتحفيز</li>
+            <li>كفاءات الانفتاح وتقبل التنوع</li>
+         </ul>`,
+        `تحتاج ان تركز على تطوير كفاءات القيادة الذاتية التالية:
+         <ul>
+            <li>قدرات الذكاء العاطفي</li>
+            <li>قدرات تحمل المسؤولية</li>
+            <li>قدرات المرونة والتكيف</li>
+            <li>قدرات التعلم المستمر</li>
+            <li>القدرة على الصبر والتحمل</li>
+         </ul>`,
+        `تحتاج ان تركز على تطوير قدرات قيادة الآخرين في فرق العمل:
+         <ul>
+            <li>قدرات الذكاء الاجتماعي</li>
+            <li>قدرات القيادة بالقدوة</li>
+            <li>قدرات حل الصراعات</li>
+            <li>قدرات التواصل الفعال</li>
+            <li>قدرات تقدير الآخرين</li>
+            <li>قدرات التدريب والإشراف</li>
+         </ul>`,
+        `تحتاج ان تركز على تطوير قدرات القيادة التنظيمية:
+         <ul>
+            <li>قدرات إدارة التغيير</li>
+            <li>قدرات حل المشكلات</li>
+            <li>قدرات صناعة القرار</li>
+            <li>قدرات البحث العلمي</li>
+            <li>قدرات إدارة فرق العمل</li>
+            <li>قدرات بناء شبكة العلاقات</li>
+         </ul>`,
+        `تحتاج ان تركز على تطوير قدرات القيادة التكنولوجية:
+         <ul>
+            <li>قدرات الشغف التكنولوجي</li>
+            <li>قدرات التعامل مع التكنولوجيا (البيانات الضخمة، السحائب الإلكترونية، الأتمتة، وإنترنت الأشياء)</li>
+            <li>قدرات التعامل مع الذكاء الاصطناعي</li>
+            <li>قدرات تحليل الأعمال</li>
+            <li>قدرات تقبل الجديد في عالم التكنولوجيا</li>
+            <li>امتلاك الثقافة التكنولوجية المتعلقة بالتحولات الرقمية</li>
+         </ul>`,
+        `تحتاج ان تركز على تطوير قدرات القيادة الإبداعية والريادية:
+         <ul>
+            <li>القدرات الإبداعية</li>
+            <li>قدرات المخاطرة</li>
+            <li>قدرات تشجيع الابتكار</li>
+            <li>قدرات التفكير التصميمي</li>
+            <li>قدرات البحث عن الفرص واقتناصها</li>
+         </ul>`,
+        `تحتاج ان تركز على تطوير قدرات القيادة الفنية:
+         <ul>
+            <li>القدرات المرتبطة في مجال التخصص</li>
+            <li>قدرات حب الاطلاع على الجديد في مجال التخصص</li>
+            <li>حب التميز عن الآخرين في مجال التخصص</li>
+            <li>قدرات التعامل الفني مع الآخرين</li>
+            <li>قدرات التوجيه والإرشاد الفني</li>
+         </ul>`
+    ];
 
     // Array of detailed development messages for each category
     const developmentMessages = [
@@ -249,8 +315,73 @@ function showResults() {
             </tbody>
         </table>
     `;
-
     questionsContainer.innerHTML = result;
+    // Add Print Button
+    const printButton = document.createElement("button");
+    printButton.innerText = "طباعة النتائج";
+    printButton.className = "btn btn-primary"; // Add Bootstrap classes for styling
+
+    printButton.onclick = () => {
+        const resultsTable = questionsContainer.querySelector("table");
+        if (resultsTable) {
+            const printableContent = `
+                <h2 class="text-center">نتائج تحليل الجاهزية القيادية</h2>
+                ${resultsTable.outerHTML}
+            `;
+            const printWindow = window.open("", "_blank");
+            printWindow.document.write(`
+                <html>
+                    <head>
+                        <title>طباعة النتائج</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
+    <link rel="icon" href="../images/logo.png" type="image/x-icon">
+    <!-- Google Fonts - Cairo -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">                        <style>
+                            body {
+                                font-family: 'Cairo', Arial, sans-serif;
+                                margin: 20px;
+                                direction: rtl;
+                                border: 1px solid #ddd;
+                            }
+                            h2 {
+                                margin-bottom: 20px;
+                                text-align: center;
+                            }
+                            table {
+                                width: 100%;
+                                border-collapse: collapse;
+                                margin-bottom: 20px;
+                            }
+                            table, th, td {
+                                border: 1px solid #ddd;
+                            }
+                            th, td {
+                                padding: 10px;
+                            }
+                            th {
+                                background-color: #f8f9fa;
+                            }
+                        </style>
+                    </head>
+                    <body>
+                        ${printableContent}
+                    </body>
+                </html>
+            `);
+            printWindow.document.close();
+            printWindow.print();
+        } else {
+            alert("لا توجد بيانات لطباعتها!");
+        }
+    };
+    questionsContainer.appendChild(printButton);
 }
 renderCategory(currentCategoryIndex);
 updateProgressBar();
+<<<<<<< HEAD
+=======
+
+localStorage.setItem("scores", JSON.stringify(scores));
+>>>>>>> 92db57491ccf4a1f73ac0ed49255c5e81dbb2c7b

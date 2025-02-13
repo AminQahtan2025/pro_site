@@ -136,5 +136,17 @@ nav .active {
 .link a{
     text-decoration: none;
     color: #90b3ff;
+<<<<<<< HEAD
 
+=======
+}
+@media (max-width: 576px) {
+    .table td, .table th {
+        font-size: 12px; /* Adjust table font size for small screens */
+    }
+}
+select.form-select option:hover {
+    background-color: #002079;
+    color: #fff;
+>>>>>>> 92db57491ccf4a1f73ac0ed49255c5e81dbb2c7b
 }

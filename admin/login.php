@@ -1,6 +1,10 @@
 <?php
 session_start();
+<<<<<<< HEAD
 include '../db_connect.php'; // Include database connection
+=======
+include 'db_connect.php'; // Include database connection
+>>>>>>> 92db57491ccf4a1f73ac0ed49255c5e81dbb2c7b
 
 // Handle login form submission
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -18,10 +22,17 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $admin = $result->fetch_assoc();
 
         // Verify password
+<<<<<<< HEAD
         if ($password === $admin['password']) {
             $_SESSION['admin_logged_in'] = true;
             $_SESSION['admin_id'] = $admin['id'];
             header('Location: ../admin_dash.php');
+=======
+        if (password_verify($password, $admin['password'])) {
+            $_SESSION['admin_logged_in'] = true;
+            $_SESSION['admin_id'] = $admin['id'];
+            header('Location: dashboard.php');
+>>>>>>> 92db57491ccf4a1f73ac0ed49255c5e81dbb2c7b
             exit();
         } else {
             $error = "Invalid username or password.";
@@ -39,9 +50,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Login</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+<<<<<<< HEAD
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
     <link rel="icon" href="../images/logo.png" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600&display=swap" rel="stylesheet">
+=======
+>>>>>>> 92db57491ccf4a1f73ac0ed49255c5e81dbb2c7b
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
