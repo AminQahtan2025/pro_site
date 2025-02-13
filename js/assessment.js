@@ -142,14 +142,11 @@ continueButton.addEventListener("click", () => {
         showResults();
     }
 });
-
-
 function updateProgressBar() {
     const progress = ((currentCategoryIndex) / categories.length) * 100;
     progressBar.style.width = `${progress}%`;
     progressBar.setAttribute("aria-valuenow", progress);
 }
-
 function showResults() {
     continueButton.style.display = "none";
     resultSection.classList.remove("d-none");
@@ -169,12 +166,75 @@ function showResults() {
             <tbody>
     `;
 
+    // Array of detailed development messages for each category
+    const developmentMessages = [
+        `تحتاج ان تركز على تطوير الكفاءات العامة في القيادة:
+         <ul>
+            <li>قدرات التفكير الاستراتيجي</li>
+            <li>قدرات وضع الأهداف</li>
+            <li>قدرات إدارة الوقت</li>
+            <li>قدرات التأثير والتحفيز</li>
+            <li>كفاءات الانفتاح وتقبل التنوع</li>
+         </ul>`,
+        `تحتاج ان تركز على تطوير كفاءات القيادة الذاتية التالية:
+         <ul>
+            <li>قدرات الذكاء العاطفي</li>
+            <li>قدرات تحمل المسؤولية</li>
+            <li>قدرات المرونة والتكيف</li>
+            <li>قدرات التعلم المستمر</li>
+            <li>القدرة على الصبر والتحمل</li>
+         </ul>`,
+        `تحتاج ان تركز على تطوير قدرات قيادة الآخرين في فرق العمل:
+         <ul>
+            <li>قدرات الذكاء الاجتماعي</li>
+            <li>قدرات القيادة بالقدوة</li>
+            <li>قدرات حل الصراعات</li>
+            <li>قدرات التواصل الفعال</li>
+            <li>قدرات تقدير الآخرين</li>
+            <li>قدرات التدريب والإشراف</li>
+         </ul>`,
+        `تحتاج ان تركز على تطوير قدرات القيادة التنظيمية:
+         <ul>
+            <li>قدرات إدارة التغيير</li>
+            <li>قدرات حل المشكلات</li>
+            <li>قدرات صناعة القرار</li>
+            <li>قدرات البحث العلمي</li>
+            <li>قدرات إدارة فرق العمل</li>
+            <li>قدرات بناء شبكة العلاقات</li>
+         </ul>`,
+        `تحتاج ان تركز على تطوير قدرات القيادة التكنولوجية:
+         <ul>
+            <li>قدرات الشغف التكنولوجي</li>
+            <li>قدرات التعامل مع التكنولوجيا (البيانات الضخمة، السحائب الإلكترونية، الأتمتة، وإنترنت الأشياء)</li>
+            <li>قدرات التعامل مع الذكاء الاصطناعي</li>
+            <li>قدرات تحليل الأعمال</li>
+            <li>قدرات تقبل الجديد في عالم التكنولوجيا</li>
+            <li>امتلاك الثقافة التكنولوجية المتعلقة بالتحولات الرقمية</li>
+         </ul>`,
+        `تحتاج ان تركز على تطوير قدرات القيادة الإبداعية والريادية:
+         <ul>
+            <li>القدرات الإبداعية</li>
+            <li>قدرات المخاطرة</li>
+            <li>قدرات تشجيع الابتكار</li>
+            <li>قدرات التفكير التصميمي</li>
+            <li>قدرات البحث عن الفرص واقتناصها</li>
+         </ul>`,
+        `تحتاج ان تركز على تطوير قدرات القيادة الفنية:
+         <ul>
+            <li>القدرات المرتبطة في مجال التخصص</li>
+            <li>قدرات حب الاطلاع على الجديد في مجال التخصص</li>
+            <li>حب التميز عن الآخرين في مجال التخصص</li>
+            <li>قدرات التعامل الفني مع الآخرين</li>
+            <li>قدرات التوجيه والإرشاد الفني</li>
+         </ul>`
+    ];
+
     categories.forEach((category, index) => {
         const maxPoints = category.questions * 5;
         const evaluation =
             scores[index] <= category.threshold
-                ? `<p class="text-danger">تحتاج أن تركز على تطوير قدرات ${category.name}</p>`
-                : "<p class='text-success'>جاهز لهذه الكفاءة </p> ";
+                ? `<p class="text-danger">${developmentMessages[index]}</p>`
+                : "<p class='text-success'>جاهز لهذه الكفاءة</p>";
         result += `
             <tr>
                 <td>${category.name}</td>
@@ -192,5 +252,5 @@ function showResults() {
 
     questionsContainer.innerHTML = result;
 }
-        renderCategory(currentCategoryIndex);
+renderCategory(currentCategoryIndex);
 updateProgressBar();

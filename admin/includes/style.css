@@ -1,0 +1,65 @@
+body {
+    font-family: 'Cairo', sans-serif;
+}
+.sidebar {
+    height: 100vh;
+    background-color: #002079;
+    color: white;
+    padding-top: 1rem;
+    overflow-y: auto;
+    position: fixed;
+    transition: transform 0.3s ease-in-out;
+}
+.sidebar.closed {
+    transform: translateX(-100%);
+}
+.sidebar a {
+    color: white;
+    text-decoration: none;
+    margin: 0.5rem 0;
+    display: block;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+}
+.sidebar a:hover {
+    background-color: #417bb6;
+}
+.topbar {
+    background-color: #f8f9fa;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 200px;
+    transition: margin-left 0.3s ease-in-out;
+}
+.topbar.shifted {
+    margin-left: 0;
+}
+.content {
+    padding: 2rem;
+    margin-left: 200px;
+    transition: margin-left 0.3s ease-in-out;
+}
+.content.shifted {
+    margin-left: 0;
+}
+.card {
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.toggle-sidebar-btn {
+    top: 15px;
+    left: 15px;
+    z-index: 1000;
+}
+.table {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.btn {
+    border-radius: 5px;
+}
+.pagination {
+    justify-content: center;
+}
