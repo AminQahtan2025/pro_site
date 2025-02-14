@@ -21,7 +21,6 @@
         <div class="banner">
             <img src="../images/banner.jpeg" alt="General Articles Banner" class="img-fluid w-100 shadow-sm">
         </div>
-<<<<<<< HEAD
         <div class="header logo d-flex flex-row">
             <hr class="bg-light">
             <!-- Breadcrumb -->
@@ -32,14 +31,10 @@
                 </ol>
             </div>
         </div>
-=======
-
->>>>>>> 92db57491ccf4a1f73ac0ed49255c5e81dbb2c7b
         <div class="container border">
             <h1 class="text-center m-4">General Articles</h1>
             <div class="row g-3">
                 <?php
-<<<<<<< HEAD
                 include '../db_connect.php';
 
                 // Pagination settings
@@ -54,7 +49,7 @@
 
                 // Fetch articles for the current page
                 $sql = "SELECT * FROM g_articles LIMIT $offset, $articlesPerPage";
-=======
+
                 // Database connection
                 $conn = new mysqli('localhost', 'root', '', 'articles_db');
                 if ($conn->connect_error) {
@@ -63,18 +58,14 @@
 
                 // Fetch articles
                 $sql = "SELECT id, title, description, published_date, pdf_url FROM articles";
->>>>>>> 92db57491ccf4a1f73ac0ed49255c5e81dbb2c7b
                 $result = $conn->query($sql);
 
                 if ($result->num_rows > 0) {
                     while ($row = $result->fetch_assoc()) {
                         echo '
                         <div class="col-md-6">
-<<<<<<< HEAD
                             <a href="veiw/G_article-viewer.php?id=' . $row['id'] . '" class="text-decoration-none card-link" style="color: black;">
-=======
                             <a href="../articles/article-viewer.php?id=' . $row['id'] . '" class="text-decoration-none card-link" style="color: black;">
->>>>>>> 92db57491ccf4a1f73ac0ed49255c5e81dbb2c7b
                                 <div class="card mb-3 shadow-sm h-wrap">
                                     <div class="row g-0 align-items-center">
                                         <div class="col-2 text-center p-3">
@@ -83,14 +74,11 @@
                                         <div class="col-10 position-relative">
                                             <div class="card-body">
                                                 <h5 class="card-title">' . $row['title'] . '</h5>
-<<<<<<< HEAD
                                                 <p class="card-text"><small class="text-body-secondary">Published: ' . $row['published_date'] . '</small></p>
                                                 <p class="card-text"><small class="text-body-secondary"><i class="fa fa-eye" aria-hidden="true"></i> ' . $row['views'] . '</small>
                                                 <small class="text-body-secondary"><i class="fa fa-comments" aria-hidden="true"></i> ' . $row['comments'] . '</small></p>
-=======
                                                 <p class="card-text">' . $row['description'] . '</p>
                                                 <p class="card-text"><small class="text-body-secondary">Published: ' . $row['published_date'] . '</small></p>
->>>>>>> 92db57491ccf4a1f73ac0ed49255c5e81dbb2c7b
                                             </div>
                                             <div class="hover-icon position-absolute translate-middle-y pe-3">
                                                 <i class="fa fa-arrow-right fa-lg" style="color: #002079;"></i>
@@ -102,7 +90,6 @@
                         </div>';
                     }
                 } else {
-<<<<<<< HEAD
                     echo '<hr><div class="alert alert-danger text-center shadow mt-3 w-100"> No articles available.</div>';
                 }
 
@@ -183,12 +170,6 @@
             );
         }
     </script>
-=======
-                    echo '<p class="text-center">No articles available.</p>';
-                }
-
-                $conn->close();
-                ?>
             </div>
         </div>
     </div>
@@ -234,6 +215,5 @@
         );
     }
 </script>
->>>>>>> 92db57491ccf4a1f73ac0ed49255c5e81dbb2c7b
 </body>
 </html>
